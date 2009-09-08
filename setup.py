@@ -10,6 +10,7 @@ This app provides everything that you need to add favoriting abilities to
 your site!  There are just a few steps that you need to go through to add
 this functionality to your site.
 
+
 Installation at a Glance
 ========================
 
@@ -75,6 +76,7 @@ object.  This model is equivalent to manually writing this:
 In fact, you could write that model if you prefer.  I prefer to subclass
 ``FavoriteBase``, since it's easier.
 
+
 Step 2: Attaching our Views
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -129,6 +131,7 @@ Note how we were able to give the new views proper URL names, and how we were
 able to easily place them where they logically fit in the URL structure--under
 the URL space of the arcade app.  Also note that we've ensured to have a ``pk``
 for the create and delete views.
+
 
 Step 3: Integration
 ~~~~~~~~~~~~~~~~~~~
@@ -229,7 +232,7 @@ page to see the favorite/un-favorite button.
 setup(
     name='django-classfaves',
     version=VERSION,
-    description='django-classfaves is a reusable Django app which uses class-based views for maximum flexibility',
+    description='A different approach to favorites in Django',
     long_description=LONG_DESCRIPTION,
     classifiers=[
         'Programming Language :: Python',
