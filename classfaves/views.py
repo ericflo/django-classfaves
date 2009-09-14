@@ -289,9 +289,9 @@ class UserFavorites(FavoriteBase):
         base_faves = self.favorite.objects.filter(user=user)
         content_ids = self.extra_filter(base_faves).values_list(self.fk_name,
             flat=True).query
-        favorites = self.content_model.objects\
-            .filter(pk__in=content_ids)\
-            .order_by('-%s__date_created' % (self.favorite._meta.module_name,))
+        # TODO: Ensure that the content models are returned in order of when
+        #       they were favorited.
+        favorites = self.content_model.objects.filter(pk__in=content_ids)
         return {
             'favorites': favorites,
             'favorite_user': user,
